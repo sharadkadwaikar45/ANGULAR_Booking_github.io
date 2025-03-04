@@ -1,0 +1,130 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto border-t -mt-px sm:pt-4">
+        <div class="w-full  pt-0 mx-auto">
+            <header class=" flex items-center justify-between bg-white px-3 py-2">
+                <div class="flex items-center">
+                    <img src="assets/ticket/logo.jpeg" class="rounded-full border" alt="PMPM Logo" style="width: 50px">
+                </div>
+                <div class="flex items-center space-x-4">
+                    <mat-icon svgIcon="mat_solid:notifications" class="icon-size-6"></mat-icon>
+                    <mat-icon svgIcon="heroicons_solid:user-circle" class="icon-size-8"></mat-icon>
+                </div>
+            </header>
+
+            <div class="relative bg-white mt-2 py-2 px-3 rounded border mx-1">
+                <mat-icon matPrefix [svgIcon]="'heroicons_solid:search'"
+                    class="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-500 icon-size-6"></mat-icon>
+                <input type="text" placeholder="कुठे जायचे आहे?"
+                    class="search-input w-full pl-10 pr-3 py-2 ml-0 rounded-full outline-none" style="background-color: #efebe3;">
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mx-4 mt-5 mb-3">
+                <div>
+                    <div class="flex justify-center items-center rounded h-24 mb-3" style="background-color: #aee8f2">
+                        <img src="assets/ticket/ticket.png" alt="Logo" class="w-12 h-12">
+                    </div>
+                    <label for="" class="flex justify-center font-medium"> Bus Ticket</label>
+                </div>
+                
+                <div>
+                    <div class="flex justify-center items-center rounded h-24 mb-3" style="background-color: #aee8f2">
+                        <img src="assets/ticket/pass.png" alt="Logo" class="w-12 h-12">
+                    </div>
+                    <label for="" class="flex justify-center font-medium">Daily Pass</label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 mx-4 mt-5 mb-3">
+                <div>
+                    <div class="flex justify-center items-center rounded h-24  mb-3" style="background-color: #aee8f2">
+                        <img src="assets/ticket/viewticket.png" alt="Logo" class="w-10 h-8">
+                    </div>
+                    <label for="" class="flex justify-center text-center font-medium"> View Ticket</label>
+                </div>
+                
+                <div>
+                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                        <img src="assets/ticket/viewticket.png" alt="Logo" class="w-10 h-8">
+                    </div>
+                    <label for="" class="flex justify-center text-center font-medium">View Pass</label>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                        <!-- <img src="assets/ticket/pass.png" alt="Logo" class="w-8 h-8"> -->
+                        <mat-icon svgIcon="mat_outline:alt_route" class="icon-size-8 text-black"></mat-icon>
+
+                    </div>
+                    <label for="" class="flex justify-center text-center font-medium">Route Ti metable</label>
+                </div>
+
+                <div>
+                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                        <img src="assets/ticket/metro.png" alt="Logo" class="w-12 h-12">
+                    </div>
+                    <label for="" class="flex justify-center text-center font-medium">Metro Ticket</label>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 mx-2 mt-5 mb-3">
+                <div class="flex justify-between">
+                    <div>
+                        <label class="flex justify-center text-lg font-bold text-center">Near Me</label>
+                    </div>
+                    <div>
+                        <a href="" class="flex justify-center text-base text-center underline"> Show all</a>
+                    </div>
+                </div>
+                <div>
+                    <div class=" grid grid-cols-1 flex justify-center items-center rounded mb-3" style="background-color:#bdc3b5">
+                        <div class="grid grid-cols-12 gap-1 w-full mt-2">
+                            <div class="col-span-2 flex justify-center items-center h-full">
+                                <mat-icon svgIcon="mat_solid:directions_bus" class="p-1 text-white bg-black rounded-full icon-size-6"></mat-icon>
+                            </div>
+                            <div class="col-span-6 flex justify-start items-center h-full">
+                                <label class="flex justify-start text-lg font-medium ">Katepuram Chowk Bus Stop</label>
+                            </div>
+                            <div class="col-span-2 flex justify-end items-center h-full">
+                                <label class="">19 m</label>
+                            </div>
+                            <div class="col-span-2 flex justify-center items-center h-full">
+                                <img src="assets/ticket/arrow.png" alt="Logo" class="w-8 h-8">
+                            </div>
+                        </div>
+                        <div class="bg-white mx-1 mt-3">
+                            <label class="flex justify-center text-center text-base font-sm my-1">No upcoming buses this stop.</label>
+                        </div>
+                        <label class="flex justify-center text-center text-base font-sm my-1">See More Buses</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-4 mx-3 mt-5 mb-3">
+                <div class="col-span-8 flex justify-center items-center h-full">
+                    <img src="assets/ticket/parking.png" alt="Logo" class="">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 bg-white rounded mx-2 mt-5 mb-3 p-2">
+                <div>
+                    <label class="flex justify-start text-lg font-bold text-start mb-2">Nearby</label>
+                </div>
+                <div class="flex justify-center items-center h-full ">
+                    <img src="assets/ticket/map.png" alt="Logo" class="h-52">
+                </div>
+            </div>
+
+            <footer class="fixed bottom-0 w-full flex justify-between items-center bg-white p-4 shadow-md">
+                <div class="flex items-center space-x-4">
+                    <mat-icon svgIcon="mat_solid:notifications" class="icon-size-6"></mat-icon>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <mat-icon svgIcon="mat_solid:notifications" class="icon-size-6"></mat-icon>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <mat-icon svgIcon="mat_solid:notifications" class="icon-size-6"></mat-icon>
+                </div>
+            </footer>            
+        </div>
+    </div>
+</div> 
