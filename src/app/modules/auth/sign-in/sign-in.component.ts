@@ -24,6 +24,9 @@ export class AuthSignInComponent implements OnInit
     additionalInfo: FormGroup;
     showAlert: boolean = false;
     Loader: boolean = false;
+    first: boolean = false;
+    second: boolean = true;
+    third: boolean = false;
     /**
      * Constructor
      */
@@ -113,4 +116,7 @@ export class AuthSignInComponent implements OnInit
                 
             );
     }
+
+   
+    
 }
