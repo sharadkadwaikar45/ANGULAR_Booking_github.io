@@ -61,23 +61,18 @@ export class ProjectComponent implements OnInit{
   }
 
 ngOnInit() {
+  this.ringService.sss().subscribe(res => {})
+
   this.searchControl.valueChanges
   .pipe(debounceTime(500)) 
   .subscribe(value => {
     this.userDetails.value.search = value
-    this.applyFilter();
   });
 
   this.userDetails = this._formBuilder.group({
     search: [''],
 });
 
-  this.userDetailsList();
-  this.fetchUserList();
-  this.fetchAppList();
-    // this.updateChartData()
-    // this.getDirection(29.9809683,45.77777733)
-    this.getDirection();
 }
 
 search(){
@@ -104,73 +99,17 @@ convertDate(inputFormat) {
   return [day, month, year].join(' ') ;
 }
 
-applyFilter() {
-  // this.dataSource.filter = filterValue.trim().toLowerCase();
-  this.page = 1;
-  this.searchLoader = true
-  this.userDetailsList()
-  setTimeout(() => { this.searchLoader = false; }, 500);
-}
-
-
-onPageChange(event: PageEvent): void {
-  this.page = event.pageIndex + 1;
-  this.pageSize = event.pageSize;
-  this.startNum = (this.pageSize * (event.pageIndex))
-  this.userDetailsList()
-}
-
-onSortChange(event: MatSort) {
-  this.sortValue = event.direction
-  this.columnIndex = this.displayedColumns.indexOf(event.active);
-  this.userDetailsList()
-}
-
-userDetailsList(){
-  this.ringService.UserList(this.page,this.pageSize,this.startNum,this.columnIndex,this.sortValue,this.userDetails.value.search).subscribe((res) =>{
-  if(res.response_message == "Success"){
-     this.userDetailsData = res.response_data
-     this.recordsTotal = res.total_records
-    this.recordsFiltered = res.filter_records
-     if(this.userDetailsData?.length != 0){
-      this.dataSource = new MatTableDataSource<any>(this.userDetailsData);
-//    this.dataSource.sort = this.sort;
-
-     this.listLoader = false;
-  }else{
-    this.listLoader = false;
-  }
-  }else{
-    this.listLoader = false;
-  }
-})
-}
 
 
 
 
 
-fetchUserList(){
-  this.ringService.fetchUserList().subscribe((res) =>{
-  if(res.response_message == "Success"){
-     this.userListData = res.response_data.slice(0, 5)
-     this.userCount =  res.response_data?.length
-  }
-})
-} 
 
 
 
 
 
-fetchAppList(){
-  this.ringService.fetchAppList().subscribe((res) =>{
-    if(res.response_message == "Success"){
-       this.appListData = res.response_data.slice(0, 5);
-       this.appCount = res.response_data?.length
-    }
-  })
-}
+
 
 editPage(pageId){
   this._route.navigate(['apps/pages/addpages/update/' + pageId]);
@@ -180,47 +119,12 @@ viewReminder(){
   this._route.navigate(['apps/reminder/list'])
 }
 
-viewFuel(){
-  this._route.navigate(['apps/fuel/list'])
+createTicket(){
+  this._route.navigate(['apps/book/create_ticket'])
 }
 
-// getDirection(dirLat: any, dirLng: any) {
-//   let srcLat, srcLng;
-//   if ('geolocation' in navigator) {
-//     navigator.geolocation.getCurrentPosition((position) => {
-//     srcLat = position.coords.latitude;
-//     srcLng = position.coords.longitude;
-//     });
-//   }
-//   this.dir = {
-//     origin: { latitude: 29.9809683, longitude: 31.3377553 },
-//     destination: { latitude: dirLat, longitude: dirLng }
-//   };
 
 
-//  // prints the values correctly for origin and destination{latitude: 29.9809683, longitude: 31.3377553}
-
-//   console.log('originDest', this.dir.origin, this.dir.destination);
-//   //in the below url, dir.origin and dir.destination does not get the values
-//   var p ='origin';
-//   var d = 'destination';
-//   window.open('https://www.google.com/maps/dir/?api=1&origin='+p+'&destination='+d+'&travelmode=driving','_blank' );
-// }
-
-public lat = 24.799448;
-public lng = 120.979021;
-
-public origin: any;
-public destination: any;
-
-getDirection() {
-  this.origin = { lat: 24.799448, lng: 120.979021 };
-  this.destination = { lat: 24.799524, lng: 120.975017 };
-
-  // Location within a string
-  // this.origin = 'Taipei Main Station';
-  // this.destination = 'Taiwan Presidential Office';
-}
 }
 
       

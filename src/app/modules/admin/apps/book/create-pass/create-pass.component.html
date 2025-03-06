@@ -1,0 +1,75 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto border-t -mt-px sm:pt-4">
+        <div class="w-full  pt-0 mx-auto">
+            <div class="max-w-md mx-auto p-4 bg-white rounded-lg shadow-lg">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-teal-700 text-white p-3 rounded-md">
+                  <button class="text-2xl" routerLink="/dashboards/project">&larr;</button>
+                  <h2 class="text-lg font-semibold">Daily Pass</h2>
+                  <span class="text-sm">{{ minutes }}:{{ seconds | number: '2.0' }}</span>
+                </div>
+              
+                <!-- Date & Time -->
+                <div class="text-center text-gray-700 mt-3 font-semibold">{{ currentDate | date:'dd MMM, yyyy | hh:mm a' }}</div>
+              
+                <!-- Pass Type Selection -->
+                <h3 class="text-lg font-medium mt-4">Select pass type</h3>
+                <div class="grid gap-2 mt-2">
+                  <button
+                    *ngFor="let pass of passTypes"
+                    [ngClass]="{'bg-green-500 text-white': selectedPass === pass}"
+                    class="w-full border border-gray-300 p-2 rounded-lg hover:bg-green-200 transition"
+                    (click)="selectPass(pass)">
+                    {{ pass.name }} - ₹{{ pass.price }}
+                  </button>
+                </div>
+              
+                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name.includes('PCMC')">
+                  Only valid in PCMC routes.
+                </p>
+              
+                <!-- ID Input -->
+                <h3 class="text-lg font-medium mt-4">Enter last 4 digits of your Aadhar Card or Pan Card</h3>
+                <div class="flex justify-between mt-2 mx-6 px-6">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[0]" class="border text-center w-12 p-2 rounded-lg">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[1]" class="border text-center w-12 p-2 rounded-lg">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[2]" class="border text-center w-12 p-2 rounded-lg">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[3]" class="border text-center w-12 p-2 rounded-lg">
+                </div>
+              
+                <p class="bg-orange-100 text-orange-800 p-2 rounded mt-2">
+                  You should have a valid ID with above details.
+                </p>
+              
+                <!-- Payment Details -->
+                <div class="flex justify-between items-center text-lg font-semibold mt-4">
+                  <span>AMOUNT PAYABLE</span>
+                  <span>₹{{ selectedPass?.price || 0 }}</span>
+                </div>
+              
+                <div class="h-24"></div>
+            </div>
+            <div class="border-t">
+                <div class="fixed bottom-0 grid grid-cols-1 flex justify-center items-center  m-4 rounded" >
+                    <div class="grid grid-cols-12 gap-1 w-full mt-2">
+                        <div class="col-span-3 flex justify-center items-center h-full">
+                            <div class="">
+                                <label class="font-medium underline">PAY USING</label>
+                                <select class="w-full border p-2 rounded-lg mt-2" [(ngModel)]="paymentMethod">
+                                    <option value="phonepe">PhonePe</option>
+                                    <option value="gpay">Google Pay</option>
+                                    <option value="paytm">Paytm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bg-green-600 col-span-9 flex justify-center items-center rounded h-full">
+                            <span class="font-bold text-white text-xl my-3" (click)="pay()">Pay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

@@ -97,6 +97,8 @@ export const appRoutes: Route[] = [
                 {path: 'vehicle', loadChildren: () => import('app/modules/admin/apps/vehicle/vehicle.module').then(m => m.VehicleModule)},
                 {path: 'fuel', loadChildren: () => import('app/modules/admin/apps/fuel/fuel.module').then(m => m.FuelModule)},
                 {path: 'reminder', loadChildren: () => import('app/modules/admin/apps/reminder/reminder.module').then(m => m.ReminderModule)},
+                {path: 'book', loadChildren: () => import('app/modules/admin/apps/book/book.module').then(m => m.BookModule)},
+
              ]},
         
             // Pages

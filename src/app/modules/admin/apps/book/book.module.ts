@@ -17,25 +17,29 @@ import { SharedModule } from 'app/shared/shared.module';
 import { MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatListModule} from '@angular/material/list';
-import {MatRadioModule} from '@angular/material/radio';
- 
-import { AddappComponent } from './addapp/addapp.component';
-import { ApplistComponent } from './applist/applist.component';
-import { appRoutes } from './app.routing';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import { AppdetailsComponent } from './appdetails/appdetails.component';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { MatRadioModule } from '@angular/material/radio';
+import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { CreatePassComponent } from './create-pass/create-pass.component';
+import { ViewTicketComponent } from './view-ticket/view-ticket.component';
+import { ViewPassComponent } from './view-pass/view-pass.component';
+import { bookRoutes } from './book.routing';
+import { ProfileComponent } from './profile/profile.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
-    AddappComponent,
-    ApplistComponent,
-    AppdetailsComponent
+    CreateTicketComponent,
+    CreatePassComponent,
+    ViewTicketComponent,
+    ViewPassComponent,
+    ProfileComponent,
+    NotificationComponent
   ],
   imports: [
-    RouterModule.forChild(appRoutes),
+    CommonModule,
+    RouterModule.forChild(bookRoutes),
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -52,12 +56,9 @@ import { AppdetailsComponent } from './appdetails/appdetails.component';
     MatTableModule,
     MatPaginatorModule,
     MatTabsModule,
- 
-    CommonModule,
-    NgxMatSelectSearchModule,
     MatExpansionModule,
     MatListModule,
     MatRadioModule
   ]
 })
-export class AppModule { }
+export class BookModule { }

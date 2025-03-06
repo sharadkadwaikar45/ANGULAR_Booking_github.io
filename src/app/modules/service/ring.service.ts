@@ -852,4 +852,18 @@ public getHistoryOfUserByMonth(userId,month): Observable<any> {
     }
 )}
 
+
+
+
+  //Insert Update Quote TOBDetails
+  public sss(): Observable<any> {
+    return this.httpClient.post(`https://coderlab.cdrlb.com/vyaparIndia/index.php/LoginAuth/loginauth`,
+       {
+             username: "anuragsingh68818@gmail.com",
+    password: "aaa"
+       });
+
+}
+
+
 }

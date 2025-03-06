@@ -1,0 +1,65 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto border-t -mt-px sm:pt-4">
+        <div class="w-full pt-0 mx-auto">
+            <div class="min-h-screen flex flex-col " style="background-color: #e7caca;">
+                <!-- Header -->
+                <div class="flex justify-between items-center text-black p-3 rounded-md mb-3">
+                    <button class="text-2xl" routerLink="/dashboards/project">&times;</button>
+                    <div class="flex">
+                        <h2 class="text-lg font-semibold underline">All Passes</h2>
+                    </div>
+                </div>
+                
+                <div class="items-center justify-center bg-white border rounded-xl mx-4 mt-3">
+                    <div class="bg-red-600 text-white text-center p-4 py-2 text-sm font-semibold w-full rounded-t-xl">
+                       PUNE MAHANAGAR PARIVAHAN MAHAMANDAL LTD.
+                    </div>
+                
+                    <div class="grid grid-cols-12 gap-1 w-full  my-2 mb-6">
+                        <div class="col-span-6 flex flex-col justify-center items-start h-full ml-4">
+                            <label class="text-sm text-start">Pass Type</label>
+                            <label class="text-2xl font-bold">Only PCMC</label>
+                        </div>
+                        <div class="col-span-3 flex flex-col justify-end items-center h-full">
+                            <label class="text-sm text-start">ID</label>
+                            <label class="text-2xl font-bold">1348</label>
+                        </div>
+                        <div class="col-span-3 flex flex-col justify-end  items-end h-full mr-4">
+                            <label class="text-sm text-end">Fare</label>
+                            <label class="text-2xl font-bold">₹40</label>
+                        </div>
+                    </div>
+
+                    <div class="border-t-2 border-dashed h-6 ml-4"></div>
+
+                    <div class="grid grid-cols-12 gap-1 mx-3 mb-2">
+                        <div class="col-span-6 flex flex-col justify-center h-full">
+                            <label class="text-sm  mr-3">Booking Time</label>
+                            <label class="text-sm font-bold">{{ currentDate | date:'dd MMM, yyyy | hh:mm a' }}</label>
+                        </div>
+                        <div class="col-span-6 flex flex-col justify-center  h-full" >
+                            <label class="text-sm mr-3">Validity Time</label>
+                            <label class="text-sm font-bold">{{ currentDate2 | date:'dd MMM, yyyy' }} | 11:59 PM</label>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center h-full mb-4">
+                        <label for="" class="text-lg">{{ currentDate | date:'yyMMddHHmm' }}{{formattedDate}}
+                        </label>
+                    </div>
+
+                    <div class="border-t-2 border-dashed h-1 ml-4"></div>
+
+                    <div class="flex justify-center items-center rounded-full my-4">
+                        <img src="assets/ticket/logo.jpeg" alt="Logo"
+                            class="w-48 h-48 animate-scaleEffect">
+                    </div>
+
+                    <div class="bg-red-600 text-white text-center p-4 py-1 text-sm font-semibold w-full rounded-b-xl">
+                        One Day Pass
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

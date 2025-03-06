@@ -1,0 +1,11 @@
+@keyframes scaleEffect {
+    0%, 100% {
+        transform: scale(0.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+.animate-scaleEffect {
+    animation: scaleEffect 1.5s ease-in-out infinite;
+}
