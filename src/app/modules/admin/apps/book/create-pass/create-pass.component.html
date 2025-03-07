@@ -18,7 +18,7 @@
                   <button
                     *ngFor="let pass of passTypes"
                     [ngClass]="{'bg-green-500 text-white': selectedPass === pass}"
-                    class="w-full border border-gray-300 p-2 rounded-lg hover:bg-green-200 transition"
+                    class=" border border-gray-300 p-2 rounded-lg hover:bg-green-200 transition"
                     (click)="selectPass(pass)">
                     {{ pass.name }} - ₹{{ pass.price }}
                   </button>
@@ -31,7 +31,7 @@
                 <!-- ID Input -->
                 <h3 class="text-lg font-medium mt-4">Enter last 4 digits of your Aadhar Card or Pan Card</h3>
                 <div class="flex justify-between mt-2 mx-6 px-6">
-                  <input type="text" maxlength="1" [(ngModel)]="digits[0]" class="border text-center w-12 p-2 rounded-lg">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[0]" class="border text-center w-12 p-2 rounded-lg ">
                   <input type="text" maxlength="1" [(ngModel)]="digits[1]" class="border text-center w-12 p-2 rounded-lg">
                   <input type="text" maxlength="1" [(ngModel)]="digits[2]" class="border text-center w-12 p-2 rounded-lg">
                   <input type="text" maxlength="1" [(ngModel)]="digits[3]" class="border text-center w-12 p-2 rounded-lg">
