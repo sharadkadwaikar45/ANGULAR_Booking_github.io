@@ -1,6 +1,6 @@
 <div class="flex flex-col flex-auto min-w-0">
     <div class="flex-auto border-t -mt-px sm:pt-4">
-        <div class="w-full  pt-0 mx-auto">
+        <div class="w-full  pt-0 mx-auto" style="background-color: #f7f2f1;">
             <header class="fixed top-0 flex items-center justify-between bg-white px-3 py-2 w-full">
                 <div class="flex items-center">
                     <img src="assets/ticket/logo.jpeg" class="rounded-full border" alt="PMPM Logo" style="width: 50px">
@@ -13,23 +13,26 @@
 
             <div class="h-16"></div>
 
-            <div class="bg-white mt-2 py-2 px-3 rounded border mx-1 flex items-center space-x-2">
-                <mat-icon matPrefix [svgIcon]="'heroicons_solid:search'" class="text-gray-500 icon-size-6"></mat-icon>
-                <input type="text" placeholder="कुठे जायचे आहे?"
-                    class="w-full py-2 px-3 rounded-full outline-none" style="background-color: #efebe3;">
+            <div class="bg-white mt-2 py-2 px-3 rounded-lg border mx-1 flex items-center space-x-2">
+                <div class="flex items-center rounded-full w-full h-11" style="background-color: #e6e6e6; ">
+                    <mat-icon matPrefix [svgIcon]="'heroicons_solid:search'" class="ml-3 text-gray-500 icon-size-6"></mat-icon>
+                    <input type="text" placeholder="कुठे जायचे आहे?"
+                        class="w-full py-2 px-3 rounded-full outline-none text-black" >
+                </div>
+              
             </div>
             
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mx-4 mt-5 mb-3">
                 <div routerLink="/apps/book/create_ticket">
-                    <div class="flex justify-center items-center rounded h-24 mb-3" style="background-color: #aee8f2" >
+                    <div class="flex justify-center items-center rounded-lg h-18 mb-3" style="background-color: #d9f4ff" >
                         <img src="assets/ticket/ticket.png" alt="Logo" class="w-12 h-12">
                     </div>
                     <label for="" class="flex justify-center font-medium"> Bus Ticket</label>
                 </div>
                 
                 <div routerLink="/apps/book/create_pass">
-                    <div class="flex justify-center items-center rounded h-24 mb-3" style="background-color: #aee8f2">
+                    <div class="flex justify-center items-center rounded-lg h-18 mb-3" style="background-color: #d9f4ff">
                         <img src="assets/ticket/pass.png" alt="Logo" class="w-12 h-12">
                     </div>
                     <label for="" class="flex justify-center font-medium">Daily Pass</label>
@@ -38,21 +41,21 @@
 
             <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 mx-4 mt-5 mb-3">
                 <div routerLink="/apps/book/view_ticket">
-                    <div class="flex justify-center items-center rounded h-24  mb-3" style="background-color: #aee8f2">
+                    <div class="flex justify-center items-center rounded-lg h-18  mb-3" style="background-color: #d9f4ff">
                         <img src="assets/ticket/viewticket.png" alt="Logo" class="w-10 h-8">
                     </div>
                     <label for="" class="flex justify-center text-center font-medium"> View Ticket</label>
                 </div>
                 
                 <div routerLink="/apps/book/view_pass">
-                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                    <div class="flex justify-center items-center rounded-lg h-18 mb-3 " style="background-color: #d9f4ff">
                         <img src="assets/ticket/viewticket.png" alt="Logo" class="w-10 h-8">
                     </div>
                     <label for="" class="flex justify-center text-center font-medium">View Pass</label>
                 </div>
 
                 <div>
-                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                    <div class="flex justify-center items-center rounded-lg h-18 mb-3 " style="background-color: #d9f4ff">
                         <!-- <img src="assets/ticket/pass.png" alt="Logo" class="w-8 h-8"> -->
                         <mat-icon svgIcon="mat_outline:alt_route" class="icon-size-8 text-black"></mat-icon>
 
@@ -61,7 +64,7 @@
                 </div>
 
                 <div>
-                    <div class="flex justify-center items-center rounded h-24 mb-3 " style="background-color: #aee8f2">
+                    <div class="flex justify-center items-center rounded-lg h-18 mb-3 " style="background-color: #d9f4ff">
                         <img src="assets/ticket/metro.png" alt="Logo" class="w-12 h-12">
                     </div>
                     <label for="" class="flex justify-center text-center font-medium">Metro Ticket</label>
@@ -115,8 +118,28 @@
                     <img src="assets/ticket/map.png" alt="Logo" class="h-52">
                 </div>
             </div>
+
+            <div>
+                <div class=" grid grid-cols-1 flex justify-center items-center rounded m-3 mb-0" >
+                    <div class="grid grid-cols-12 gap-4 w-full mt-2">
+                        <div class="col-span-6 flex flex-col  items-start h-full ">
+                            <label class="flex justify-center text-start text-base font-sm my-1">Apli PMPML चा आनंद घेत आहात 😍?</label>
+                            <label class="flex justify-center text-start text-base font-sm my-1">तुमच्या मित्रांसोबत शेअर करा</label>
+                            <div class="border font-bold rounded-lg text-green-700 p-3 bg-white mt-4">
+                                <label class="flex justify-center text-center text-base ">आता शेअर करा </label>
+                            </div>
+                        </div>
+                        <div class="col-span-6 flex justify-start items-center h-full">
+                            <img src="assets/ticket/2.png" alt="Logo" class="h-45">
+                        </div>
+                    </div>
+                    <label class="flex justify-center text-center items-center text-base font-sm mt-6">Powered by 
+                        <img src="assets/ticket/3.png" alt="" class="w-5 h-5 ml-1">
+                        <span class="font-bold text-2xl text-blue-700  mx-1"> Chartr </span> for PMPML.</label>
+                </div>
+            </div>
             
-            <div class="h-18"></div>
+            <div class="h-16"></div>
 
             <div class="fixed bottom-0 w-full bg-white shadow-md p-3 flex justify-around">
                 <div class="flex flex-col items-center text-gray-600">
