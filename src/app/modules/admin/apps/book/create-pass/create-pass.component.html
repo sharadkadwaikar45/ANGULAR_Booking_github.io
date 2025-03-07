@@ -14,60 +14,69 @@
               
                 <!-- Pass Type Selection -->
                 <h3 class="text-lg font-medium mt-4">Select pass type</h3>
-                <div class="grid gap-2 mt-2">
+                <div class=" gap-y-2 mt-2">
                   <button
                     *ngFor="let pass of passTypes"
-                    [ngClass]="{'bg-green-500 text-white': selectedPass === pass}"
-                    class=" border border-gray-300 p-2 rounded-lg hover:bg-green-200 transition"
+                    [ngClass]="{'bg-green-200 text-black': selectedPass === pass}"
+                    class="flex flex-row items-center border border-gray-300 px-4 py-0 rounded-lg hover:bg-green-200 transition mb-2 "
                     (click)="selectPass(pass)">
-                    {{ pass.name }} - ₹{{ pass.price }}
+                    {{ pass.name }} - <span class="text-2xl ml-1">₹</span>{{ pass.price | number: '1.1-1' }}
                   </button>
                 </div>
+                
               
-                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name.includes('PCMC')">
+                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name == 'Only PMC' ">
+                  Only valid in PMC routes.
+                </p>
+                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name == 'Only PCMC' ">
                   Only valid in PCMC routes.
+                </p>
+                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name == 'PMC and PCMC' ">
+                  Valid in both PMC and PCMC routes.
+                </p>
+                <p class="bg-yellow-100 text-yellow-800 p-2 rounded mt-2" *ngIf="selectedPass?.name == 'All Routes' ">
+                  Valid in all routes of PMPML.
                 </p>
               
                 <!-- ID Input -->
                 <h3 class="text-lg font-medium mt-4">Enter last 4 digits of your Aadhar Card or Pan Card</h3>
-                <div class="flex justify-between mt-2 mx-6 px-6">
-                  <input type="text" maxlength="1" [(ngModel)]="digits[0]" class="border text-center w-12 p-2 rounded-lg ">
-                  <input type="text" maxlength="1" [(ngModel)]="digits[1]" class="border text-center w-12 p-2 rounded-lg">
-                  <input type="text" maxlength="1" [(ngModel)]="digits[2]" class="border text-center w-12 p-2 rounded-lg">
-                  <input type="text" maxlength="1" [(ngModel)]="digits[3]" class="border text-center w-12 p-2 rounded-lg">
+                <div class="flex justify-center mt-2  border rounded-lg">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[0]" class=" text-center w-12 p-2  ">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[1]" class=" text-center w-12 p-2 ">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[2]" class=" text-center w-12 p-2 ">
+                  <input type="text" maxlength="1" [(ngModel)]="digits[3]" class=" text-center w-12 p-2 ">
                 </div>
               
-                <p class="bg-orange-100 text-orange-800 p-2 rounded mt-2">
+                <p class="bg-yellow-100 text-amber-500 p-2 px-4 rounded mt-2">
                   You should have a valid ID with above details.
                 </p>
               
                 <!-- Payment Details -->
                 <div class="flex justify-between items-center text-lg font-semibold mt-4">
                   <span>AMOUNT PAYABLE</span>
-                  <span>₹{{ selectedPass?.price || 0 }}</span>
+                  <span class="text-3xl font-bold">₹{{ selectedPass?.price | number: '1.1-1' }}</span>
                 </div>
               
                 <div class="h-24"></div>
             </div>
-            <div class="border-t">
-                <div class="fixed bottom-0 grid grid-cols-1 flex justify-center items-center  m-4 rounded" >
-                    <div class="grid grid-cols-12 gap-1 w-full mt-2">
-                        <div class="col-span-3 flex justify-center items-center h-full">
-                            <div class="">
-                                <label class="font-medium underline">PAY USING</label>
-                                <select class="w-full border p-2 rounded-lg mt-2" [(ngModel)]="paymentMethod">
-                                    <option value="phonepe">PhonePe</option>
-                                    <option value="gpay">Google Pay</option>
-                                    <option value="paytm">Paytm</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="bg-green-600 col-span-9 flex justify-center items-center rounded h-full">
-                            <span class="font-bold text-white text-xl my-3" (click)="pay()">Pay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="fixed bottom-1 grid grid-cols-1 flex justify-center items-center border p-4 pt-1" >
+              <div class="grid grid-cols-12 gap-1 w-full mt-2">
+                  <div class="col-span-3 flex justify-center items-center h-full">
+                      <div class="">
+                          <label class="font-medium underline">PAY USING</label>
+                          <select class="w-full border p-1 rounded-lg mt-1" [(ngModel)]="paymentMethod">
+                              <option value="phonepe">PhonePe</option>
+                              <option value="gpay">Google Pay</option>
+                              <option value="paytm">Paytm</option>
+                              <option value="amazon">Amazon</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="bg-green-600 col-span-9 flex justify-center items-center rounded h-full">
+                      <span class="font-bold text-white text-2xl my-2" (click)="pay()">Pay</span>
+                  </div>
+              </div>
+          </div>  
         </div>
     </div>
 </div>

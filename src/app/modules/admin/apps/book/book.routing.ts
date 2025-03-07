@@ -5,6 +5,8 @@ import { CreatePassComponent } from './create-pass/create-pass.component';
 import { ViewPassComponent } from './view-pass/view-pass.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotificationComponent } from './notification/notification.component';
+import { AllpassesComponent } from './allpasses/allpasses.component';
+import { AllticketsComponent } from './alltickets/alltickets.component';
 
 export const bookRoutes: Route[] = [
     {
@@ -30,6 +32,15 @@ export const bookRoutes: Route[] = [
     {
         path:"notification",
         component: NotificationComponent
-    }
+    },
+    {
+        path:"all_passes",
+        component: AllpassesComponent
+    },
+    {
+        path:"all_tickets",
+        component: AllticketsComponent
+    },
+  
   
 ];

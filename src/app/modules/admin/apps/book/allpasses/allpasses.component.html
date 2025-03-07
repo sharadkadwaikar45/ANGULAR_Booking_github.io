@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>All Passes</h2>
+    <div *ngFor="let pass of passes" class="pass-card" [ngClass]="{'invalid': true}">
+      <div class="pass-info">
+        <p class="type">{{ pass.type }}</p>
+        <p class="date">{{ pass.date }}</p>
+        <p class="amount">&#8377;{{ pass.amount }}</p>
+      </div>
+      <div class="status" [ngClass]="{'success': pass.status === 'Success', 'failed': pass.status === 'Failed'}">
+        {{ pass.status }}
+      </div>
+      <div class="invalid-stamp">INVALID</div>
+    </div>
+  </div>

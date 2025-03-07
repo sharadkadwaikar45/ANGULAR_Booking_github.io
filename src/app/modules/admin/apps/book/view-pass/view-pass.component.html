@@ -1,32 +1,32 @@
 <div class="flex flex-col flex-auto min-w-0">
     <div class="flex-auto border-t -mt-px sm:pt-4">
         <div class="w-full pt-0 mx-auto">
-            <div class="min-h-screen flex flex-col " style="background-color: #e6f7e8">
+            <div  class="min-h-screen flex flex-col " style="background-color: #e6f7e8">
                 <!-- Header -->
                 <div class="flex justify-between items-center text-black p-3 rounded-md mb-3">
                     <button class="text-4xl" routerLink="/dashboards/project">&times;</button>
                     <div class="flex">
-                        <h2 class="text-lg font-semibold underline">All Passes</h2>
+                        <h2 class="text-lg font-semibold underline" routerLink="/apps/book/all_passes">All Passes</h2>
                     </div>
                 </div>
                 
-                <div class="items-center justify-center bg-white border rounded-xl mx-4 mt-3">
+                <div *ngIf="PASSDATA" class="items-center justify-center bg-white border rounded-xl mx-4 mt-3">
                     <div class="bg-red-600 text-white text-center p-4 py-2 text-base font-semibold w-full rounded-t-xl">
                         पुणे महानगर परिवहन महामंडळ लि.
                     </div>
                 
                     <div class="grid grid-cols-12 gap-1 w-full  my-2 mb-6">
-                        <div class="col-span-6 flex flex-col justify-center items-start h-full ml-4">
+                        <div class="col-span-6 flex flex-col justify-start items-start h-full ml-4">
                             <label class="text-sm text-start">Pass Type</label>
-                            <label class="text-2xl font-bold">Only PCMC</label>
+                            <label class="text-2xl font-bold">{{passData.selectedPass.name}}</label>
                         </div>
-                        <div class="col-span-3 flex flex-col justify-end items-center h-full">
+                        <div class="col-span-3 flex flex-col justify-start items-center h-full">
                             <label class="text-sm text-start">ID</label>
-                            <label class="text-2xl font-bold">1348</label>
+                            <label class="text-2xl font-bold">{{passData.code}}</label>
                         </div>
-                        <div class="col-span-3 flex flex-col justify-end  items-end h-full mr-4">
+                        <div class="col-span-3 flex flex-col justify-start  items-end h-full mr-4">
                             <label class="text-sm text-end">Fare</label>
-                            <label class="text-2xl font-bold">₹40</label>
+                            <label class="text-2xl font-bold">₹{{passData.selectedPass.price}}</label>
                         </div>
                     </div>
 
@@ -58,6 +58,9 @@
                     <div class="bg-red-600 text-white text-center p-4 py-1 text-sm font-semibold w-full rounded-b-xl">
                         One Day Pass
                      </div>
+                </div>
+                <div *ngIf="!PASSDATA" class="container flex justify-center items-center">
+                    <h5>Data Not Found</h5>
                 </div>
             </div>
         </div>

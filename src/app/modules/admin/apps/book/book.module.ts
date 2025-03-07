@@ -27,6 +27,8 @@ import { ViewPassComponent } from './view-pass/view-pass.component';
 import { bookRoutes } from './book.routing';
 import { ProfileComponent } from './profile/profile.component';
 import { NotificationComponent } from './notification/notification.component';
+import { AllpassesComponent } from './allpasses/allpasses.component';
+import { AllticketsComponent } from './alltickets/alltickets.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { NotificationComponent } from './notification/notification.component';
     ViewTicketComponent,
     ViewPassComponent,
     ProfileComponent,
-    NotificationComponent
+    NotificationComponent,
+    AllpassesComponent,
+    AllticketsComponent
   ],
   imports: [
     CommonModule,

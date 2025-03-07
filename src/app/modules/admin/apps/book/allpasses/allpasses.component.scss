@@ -1,0 +1,56 @@
+.container {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .pass-card {
+    position: relative;
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid red;
+  }
+  
+  .pass-info p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: right;
+    float: right;
+  }
+  
+  .success {
+    background: green;
+    color: white;
+  }
+  
+  .failed {
+    background: red;
+    color: white;
+  }
+  
+  .invalid-stamp {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 24px;
+    color: rgba(255, 0, 0, 0.6);
+    font-weight: bold;
+    border: 2px solid red;
+    padding: 5px 15px;
+    text-transform: uppercase;
+  }
+  

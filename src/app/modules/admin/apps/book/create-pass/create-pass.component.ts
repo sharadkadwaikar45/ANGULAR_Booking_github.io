@@ -51,7 +51,15 @@ export class CreatePassComponent implements OnInit {
   }
 
   pay() {
-    alert(`Processing payment of ₹${this.selectedPass.price} via ${this.paymentMethod}`);
+    const enteredCode = this.digits.join(""); 
+    let data = {
+      code: enteredCode,
+      selectedPass: this.selectedPass
+    };
+
+    localStorage.setItem("passData", JSON.stringify(data));
+    this._route.navigate(['apps/book/view_pass'])
+
   }
 
 }

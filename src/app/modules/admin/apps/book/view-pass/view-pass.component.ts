@@ -9,11 +9,19 @@ export class ViewPassComponent implements OnInit {
   currentDate: Date = new Date();
   currentDate2: Date = new Date() ;
   formattedDate: string = '';
+  passData: any;
+  PASSDATA:boolean = false
   constructor() { }
 
   ngOnInit(): void {
     this.currentDate2.setMinutes(this.currentDate2.getMinutes() + 30);
     this.formattedDate = this.generateRandomString(6);
+
+    this.passData = JSON.parse(localStorage.getItem("passData"));
+
+if (this.passData) {
+    this.PASSDATA = true
+}
 
   }
 
