@@ -19,4 +19,8 @@ export class AllpassesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showPass(pass:any){
+console.log(pass)
+  }
+
 }
