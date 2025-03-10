@@ -10,7 +10,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { debounceTime } from 'rxjs/operators';
 import Swal from 'sweetalert2';
-
+// ng b --output-path docs --base-href /ANGULAR_Booking_github.io/
 @Component({
   selector: 'project',
   templateUrl: './project.component.html',
