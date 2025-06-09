@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-pass',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-pass.component.scss']
 })
 export class ViewPassComponent implements OnInit {
+  @ViewChild('callAPIDialog') callAPIDialog: TemplateRef<any>;
+  
   currentDate: Date = new Date();
   currentDate2: Date = new Date() ;
   formattedDate: string = '';
   passData: any;
   PASSDATA:boolean = false
-  constructor() { }
+  showQR:boolean = false
+  constructor(public _route: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.currentDate2.setMinutes(this.currentDate2.getMinutes() + 30);
@@ -34,4 +39,14 @@ if (this.passData) {
     return result;
   }
 
+
+
+   showQRcode() {
+    const dialog = this.dialog.open(this.callAPIDialog);
+    dialog.afterClosed().subscribe((result) => { });
+  }
+
+  close(){
+    this.dialog.closeAll()
+  }
 }

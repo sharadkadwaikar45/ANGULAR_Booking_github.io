@@ -7,5 +7,20 @@
     }
 }
 .animate-scaleEffect {
-    animation: scaleEffect 1.5s ease-in-out infinite;
+    animation: scaleEffect 1.8s ease-in-out infinite;
+}
+
+.qrCode{
+    border: 1px solid green;
+    color:green;
+    background-color: #c1edc1;
+    font-size: 20px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 10px !important;
+}
+
+::ng-deep .mat-dialog-container {
+    border-radius: 0px !important;
 }

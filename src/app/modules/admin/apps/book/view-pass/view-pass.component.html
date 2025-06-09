@@ -1,8 +1,7 @@
 <div class="flex flex-col flex-auto min-w-0">
     <div class="flex-auto border-t -mt-px sm:pt-4">
         <div class="w-full pt-0 mx-auto">
-            <div  class="min-h-screen flex flex-col " style="background-color: #e6f7e8">
-                <!-- Header -->
+            <div class="min-h-screen flex flex-col " style="background-color: #e6f7e8">
                 <div class="flex justify-between items-center text-black p-3 rounded-md mb-3">
                     <button class="text-4xl" routerLink="/dashboards/project">&times;</button>
                     <div class="flex">
@@ -59,9 +58,24 @@
                         One Day Pass
                      </div>
                 </div>
+                <div class="flex items-center justify-center border rounded-xl mx-4 mt-6 h-12 qrCode" (click)="showQRcode()" >
+                    <mat-icon class="mr-2 icon-size-8" svgIcon="mat_solid:qr_code_2" style="color:green"></mat-icon>
+                    <span class="font-semibold">Show QR code</span>
+                </div>
                 <div *ngIf="!PASSDATA" class="container flex justify-center items-center">
                     <h5>Data Not Found</h5>
                 </div>
+            </div>
+            <div  class="flex items-center justify-center" >
+                <ng-template #callAPIDialog>
+                    <div class="relative" >
+                        <mat-icon svgIcon="mat_outline:close"
+                            style="color: rgb(10, 10, 10); cursor: pointer; position: absolute; z-index: 111;  top: -5px; right: -5px;"
+                            matDialogClose="yes" (click)="close()">
+                        </mat-icon>
+                        <img class="h-50 w-50 bg-white"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRImIHUve72wr55Q99DHrmyivaVx3d9q5YnwQ&s" alt="">
+                    </div>
+                </ng-template >
             </div>
         </div>
     </div>
