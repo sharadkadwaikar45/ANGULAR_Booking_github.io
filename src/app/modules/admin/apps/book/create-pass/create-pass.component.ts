@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CreatePassComponent implements OnInit {
   passTypes = [
-    { name: 'PMC & PCMC', price: 70 },
+    { name: 'PMC and PCMC', price: 70 },
     { name: 'All Routes', price: 150 },
   ];
   minutes: number = 4;

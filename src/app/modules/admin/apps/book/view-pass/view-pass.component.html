@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 
-                <div *ngIf="PASSDATA" class="items-center justify-center bg-white border rounded-xl mx-4 mt-3">
+                <div *ngIf="PASSDATA" class="items-center justify-center bg-white border rounded-xl mx-4 mt-3 mb-2">
                     <div class="bg-red-600 text-white text-center p-4 py-2 text-base font-semibold w-full rounded-t-xl">
                         पुणे महानगर परिवहन महामंडळ लि.
                     </div>
@@ -31,10 +31,10 @@
 
                     <div class="border-t-2 border-dashed h-6 ml-4"></div>
 
-                    <div class="grid grid-cols-12 gap-1 mx-3 mb-2">
+                    <div class="grid grid-cols-12 gap-1 mx-3 mb-4">
                         <div class="col-span-6 flex flex-col justify-center h-full">
                             <label class="text-sm  mr-3">Booking Time</label>
-                            <label class="text-sm font-bold">{{ currentDate | date:'dd MMM, yyyy ' }} | 08:38 AM</label>
+                            <label class="text-sm font-bold">{{ currentDate | date:'dd MMM, yyyy ' }} | 09:12 AM</label>
                         </div>
                         <div class="col-span-6 flex flex-col justify-center  h-full" >
                             <label class="text-sm mr-3">Validity Time</label>
@@ -43,24 +43,24 @@
                     </div>
 
                     <div class="flex flex-col justify-center items-center h-full mb-4">
-                        <label for="" class="text-lg">{{ currentDate | date:'yyMMdd' }}0838{{formattedDate}}
+                        <label for="" class="text-lg">{{ currentDate | date:'yyMMdd' }}0912{{formattedDate}}
                         </label>
                     </div>
 
                     <div class="border-t-2 border-dashed h-1 ml-4"></div>
 
-                    <div class="flex justify-center items-center rounded-full my-4">
+                    <div class="flex justify-center items-center rounded-full my-6">
                         <img src="assets/ticket/logo.jpeg" alt="Logo"
-                            class="w-48 h-48 animate-scaleEffect">
+                            class="w-52 h-52 animate-scaleEffect">
                     </div>
 
                     <div class="bg-red-600 text-white text-center p-4 py-1 text-sm font-semibold w-full rounded-b-xl">
                         One Day Pass
                      </div>
                 </div>
-                <div class="flex items-center justify-center border rounded-xl mx-4 mt-6 h-12 qrCode" (click)="showQRcode()" >
+                <div class="flex items-center justify-center border rounded-md mx-4 mt-6 h-12 qrCode" (click)="showQRcode()" >
                     <mat-icon class="mr-2 icon-size-8" svgIcon="mat_solid:qr_code_2" style="color:green"></mat-icon>
-                    <span class="font-semibold">Show QR code</span>
+                    <span class="font-sm">Show QR code</span>
                 </div>
                 <div *ngIf="!PASSDATA" class="container flex justify-center items-center">
                     <h5>Data Not Found</h5>
